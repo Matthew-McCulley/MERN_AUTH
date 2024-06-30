@@ -7,7 +7,6 @@ import {useLoginMutation} from '../slices/usersApiSlice'
 import { setCredentials } from '../slices/authSlice'
 import {toast} from 'react-toastify'
 import Loader from '../components/Loader'
-
 const LoginScreen = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -16,8 +15,8 @@ const LoginScreen = () => {
     const dispatch = useDispatch()
 
     const [login, {isLoading}] = useLoginMutation()
-
-    const {userInfo} = useSelector((state) => state.auth)
+    let {userInfo} = useSelector((state) => state.auth)
+    
     
     useEffect(() => {
         if(userInfo){

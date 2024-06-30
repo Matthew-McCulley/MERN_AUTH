@@ -7,7 +7,7 @@ import {toast} from 'react-toastify'
 import Loader from '../components/Loader'
 import { useRegisterMutation } from '../slices/usersApiSlice'
 import {setCredentials} from '../slices/authSlice'
-
+import { resetCart } from '../slices/cartSlice';
 
 const RegisterScreen = () => {
     const [name, setName] = useState('')
@@ -35,6 +35,7 @@ const RegisterScreen = () => {
             try{
                 const res = await register({name, email, password}).unwrap()
                 dispatch(setCredentials({...res}))
+                dispatch(resetCart());
                 navigate('/') 
             }catch(err){
                 toast.error(err?.data?.message || err.error)
