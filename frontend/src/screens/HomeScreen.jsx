@@ -1,6 +1,6 @@
-import ItemContainer from '../components/ItemContainer';
+import Hero from "../components/Hero"
 const HomeScreen = () => {
-  return <ItemContainer/>
+  return <Hero/>
 }
 
 export default HomeScreen

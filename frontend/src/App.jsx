@@ -8,7 +8,7 @@ const App = () => {
     <>
       <Header/>
       <ToastContainer/>
-      <Container className='my-2 py-5 d-flex justify-content-center w-75'>
+      <Container className='my-2'>
         <Outlet/>
       </Container>
     </>
